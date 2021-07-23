@@ -1,0 +1,30 @@
+{
+  "name": "bmi-calculator",
+  "description": "Node.js REST API service endpoint that calculates Body-Mass Index (BMI) and its meaning (i.e. underweight, normal, or overweight) depending on the given query string parameters",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raykrishardi/bmi-calculator.git"
+  },
+  "author": "Ray Krishardi Layadi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raykrishardi/bmi-calculator/issues"
+  },
+  "homepage": "https://github.com/raykrishardi/bmi-calculator#readme",
+  "dependencies": {
+    "convict": "^6.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  }
+}
