@@ -8,6 +8,9 @@
     "nodemon": "^2.0.12"
   },
   "scripts": {
+    "start": "cd ./src && pm2 start app.js",
+    "dev": "cd ./src && nodemon app.js",
+    "stop": "cd ./src && pm2 stop app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
