@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-../node_modules/.bin/mocha ../tests/bmi.test.js
+currentDir=$(dirname $0)
+
+$currentDir/../node_modules/.bin/mocha $currentDir/../tests/bmi.test.js --exit

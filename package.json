@@ -14,7 +14,7 @@
     "start": "cd ./src && pm2 start app.js",
     "dev": "cd ./src && nodemon app.js",
     "stop": "cd ./src && pm2 stop app.js",
-    "test": "./node_modules/.bin/mocha ./tests/bmi.test.js"
+    "test": "./node_modules/.bin/mocha ./tests/bmi.test.js --exit"
   },
   "repository": {
     "type": "git",
