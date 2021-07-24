@@ -28,3 +28,5 @@ app.use(defaultErrorHandler)
 app.listen(config.app.port, () => {
  logger.info(`Server is listening on port ${config.app.port}`)
 })
+
+module.exports = app
