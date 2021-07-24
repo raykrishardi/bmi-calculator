@@ -14,7 +14,7 @@ const config = convict({
   port: {
    doc: 'The port to bind depending on application environment',
    format: 'port',
-   default: 8080,
+   default: 9000,
    env: 'NODE_PORT',
    arg: 'nodePort'
   },
