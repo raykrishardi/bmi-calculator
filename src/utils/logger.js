@@ -10,27 +10,25 @@ const transports = [];
 // Setup daily rotated log files using "winston-daily-rotate-file"
 // Log file name will be generated from logs.serviceName and current date (YYYY-MM-DD format)
 // Rotated log files will be archived using gzip
-transports.push(new winston.transports.DailyRotateFile({
-  dirname: config.app.logs.dirPath,
-  filename: config.app.logs.serviceName + '-%DATE%.log',
-  datePattern: 'YYYY-MM-DD',
-  zippedArchive: true,
-  maxSize: config.app.logs.retentionMaxFileSize,
-  maxFiles: config.app.logs.retentionDays
-}))
+// transports.push(new winston.transports.DailyRotateFile({
+//   dirname: config.app.logs.dirPath,
+//   filename: config.app.logs.serviceName + '-%DATE%.log',
+//   datePattern: 'YYYY-MM-DD',
+//   zippedArchive: true,
+//   maxSize: config.app.logs.retentionMaxFileSize,
+//   maxFiles: config.app.logs.retentionDays
+// }))
 
 //
-// If we're NOT in production then **ALSO** log to the `console`
+// Log to the `console`
 // with the colorized simple format
 //
-if (process.env.NODE_ENV !== 'production') {
-  transports.push(new winston.transports.Console({
-    format: winston.format.combine(
-      winston.format.colorize(),
-      winston.format.simple()
-    )
-  }));
-}
+transports.push(new winston.transports.Console({
+  format: winston.format.combine(
+    winston.format.colorize(),
+    winston.format.simple()
+  )
+}));
 
 // Winston logger will be integrated with Morgan
 // Using NPM logging levels
