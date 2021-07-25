@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
                 sh 'npm install'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
                 sh './scripts/bmi.test.sh'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                sh 'sudo docker build -t bmi-calculator:${BUILD_NUMBER} .'
+                sh 'sudo docker tag bmi-calculator:${BUILD_NUMBER} raylayadi/bmi-calculator:${BUILD_NUMBER}'
+                sh 'sudo docker push raylayadi/bmi-calculator:${BUILD_NUMBER}' 
             }
         }
     }
