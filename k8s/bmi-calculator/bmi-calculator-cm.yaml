@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  NODE_ENV: production
+  NODE_LOG_DIR_PATH: './logs/'
+  NODE_LOG_LEVEL: 'info'
+  NODE_LOG_RETENTION_DAYS: '14d'
+  NODE_LOG_RETENTION_MAX_FILE_SIZE: '20m'
+  NODE_LOG_SERVICE_NAME: 'bmi-calculator-service'
+  NODE_PORT: "80"
+kind: ConfigMap
+metadata:
+  name: bmi-calculator-cm

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bmi-calculator
+  name: bmi-calculator
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: bmi-calculator
+status:
+  loadBalancer: {}

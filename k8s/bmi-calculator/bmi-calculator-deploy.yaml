@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bmi-calculator
+  name: bmi-calculator
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: bmi-calculator
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: bmi-calculator
+    spec:
+      containers:
+      - image: raylayadi/bmi-calculator:latest
+        imagePullPolicy: Always
+        name: bmi-calculator
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: bmi-calculator-cm
+        resources: {}
+status: {}

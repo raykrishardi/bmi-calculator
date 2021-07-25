@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: default
+spec:
+  rules:
+  - host: bmi.raylayadi.com
+    http:
+      paths:
+      - backend:
+          serviceName: bmi-calculator
+          servicePort: 80
+        path: /
