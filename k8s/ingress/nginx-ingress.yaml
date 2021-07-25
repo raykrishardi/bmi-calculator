@@ -12,3 +12,10 @@ spec:
           serviceName: bmi-calculator
           servicePort: 80
         path: /
+  - host: kibana.bmi.raylayadi.com
+    http:
+      paths:
+      - backend:
+          serviceName: kibana-kibana
+          servicePort: 5601
+        path: /
