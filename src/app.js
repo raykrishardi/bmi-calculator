@@ -5,6 +5,7 @@ const config = require('./config/config')
 const express = require('express')
 const logger = require('./utils/logger') // Winston logger
 const morgan = require('morgan') // Morgan HTTP request logger
+const morganEcsFormat = require('@elastic/ecs-morgan-format')
 
 // Get route handlers
 const bmiRouteHandler = require('./api/routes/bmi')
@@ -15,8 +16,8 @@ const defaultErrorHandler = require('./api/middlewares/error')
 // Express app
 const app = express()
 
-// Send standard Apache combined log output from Morgan to Winston log file
-app.use(morgan("combined", { "stream": logger.stream }))
+// Get ECS (Elastic Common Schema) format for morgan logging
+app.use(morgan(morganEcsFormat()))
 
 // Bind custom middleware/route handlers
 app.use(bmiRouteHandler)

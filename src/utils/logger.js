@@ -51,11 +51,4 @@ const logger = winston.createLogger({
   transports
 });
 
-// Used to integrate Morgan with Winston (send standard Apache combined log output from Morgan to Winston log file)
-logger.stream = {
-  write: function (message, encoding) {
-    logger.info(message);
-  }
-};
-
 module.exports = logger
