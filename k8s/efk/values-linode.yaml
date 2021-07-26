@@ -1,5 +1,5 @@
 # Shrink default JVM heap
-esJavaOpts: "-Xmx128m -Xms128m"
+esJavaOpts: "-Xmx512m -Xms512m"
 
 # Allocate smaller chunks of memory per pod
 resources:
@@ -7,10 +7,10 @@ resources:
     cpu: "100m"
     memory: "512M"
   limits:
-    cpu: "1000m"
-    memory: "512M"
+    cpu: "1200m"
+    memory: "1G"
 
-# Request smaller persistent volumes per pod (i.e. each pod here will take 100M storage from the linode storage class)
+# Request smaller persistent volumes per pod (i.e. each pod here will take 10GB storage from the linode storage class)
 volumeClaimTemplate:
   accessModes: [ "ReadWriteOnce" ]
   storageClassName: "linode-block-storage"
