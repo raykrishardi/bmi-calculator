@@ -19,3 +19,10 @@ spec:
           serviceName: kibana-kibana
           servicePort: 5601
         path: /
+  - host: grafana.bmi.raylayadi.com
+    http:
+      paths:
+      - backend:
+          serviceName: prometheus-grafana
+          servicePort: 80
+        path: /
