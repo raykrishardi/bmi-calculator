@@ -28,11 +28,11 @@
   "homepage": "https://github.com/raykrishardi/bmi-calculator#readme",
   "dependencies": {
     "@elastic/ecs-morgan-format": "^1.1.0",
+    "@elastic/ecs-winston-format": "^1.1.0",
     "convict": "^6.2.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "prom-client": "^13.1.0",
-    "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.5"
+    "winston": "^3.3.3"
   }
 }
