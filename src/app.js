@@ -8,6 +8,7 @@ const morgan = require('morgan') // Morgan HTTP request logger
 
 // Get route handlers
 const bmiRouteHandler = require('./api/routes/bmi')
+const promMetricsRouteHandler = require('./api/routes/prom-metrics')
 const defaultRouteHandler = require('./api/middlewares/default')
 const defaultErrorHandler = require('./api/middlewares/error')
 
@@ -19,6 +20,7 @@ app.use(morgan("combined", { "stream": logger.stream }))
 
 // Bind custom middleware/route handlers
 app.use(bmiRouteHandler)
+app.use(promMetricsRouteHandler)
 
 // Default route and default error handler
 app.use(defaultRouteHandler)
